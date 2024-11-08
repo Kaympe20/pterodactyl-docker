@@ -31,7 +31,7 @@ services:
     restart: always
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - "/srv/pterodactyl/database:/var/lib/mysql"
+      - "panel-db:/var/lib/mysql"
     environment:
       <<: *db-environment
       MYSQL_DATABASE: "panel"
@@ -119,3 +119,4 @@ volumes:
   panel-nginx:
   panel-certs:
   panel-logs:
+  panel-db:
